@@ -1,0 +1,79 @@
+{
+  "name": "scroll-js",
+  "version": "3.3.0",
+  "description": "Light cross-browser scroller that uses native javascript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkay581/scroll-js.git"
+  },
+  "homepage": "https://github.com/mkay581/scroll-js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Mark Kennedy <mark@heyimmark.com> (heyimmark.com)",
+  "keywords": [
+    "scroller",
+    "scroll",
+    "scroll class",
+    "scrolljs",
+    "scroll js",
+    "scrollTo",
+    "scroll events",
+    "scrollintoview",
+    "scroll into view",
+    "window scroll",
+    "window scroll polyfill",
+    "scroll into view polyfill"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.16"
+  },
+  "main": "./dist/scroll.common.js",
+  "module": "./dist/scroll.js",
+  "types": "./dist/scroll.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "test": "karma start karma.conf.js && npm run lint",
+    "test-server": "karma start karma.conf.js --single-run=false",
+    "preversion": "npm test",
+    "build": "rm -rf dist/* && rollup -c",
+    "banner": "banner-cli dist/*.js",
+    "start": "rollup -c --watch",
+    "lint": "eslint '**/*.{js,ts}'",
+    "coveralls": "cat .coverage/lcov.info | coveralls"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-typescript": "^7.6.0",
+    "@open-wc/karma-esm": "^2.9.0",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
+    "banner-cli": "^0.14.1",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "karma": "^5.0.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.1",
+    "karma-mocha": "^2.0.0",
+    "karma-rollup-preprocessor": "^7.0.2",
+    "karma-typescript-preprocessor": "^0.4.0",
+    "mocha": "^8.0.1",
+    "prettier": "^2.0.0",
+    "raf-stub": "^3.0.0",
+    "rollup": "^2.3.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^6.0.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "sinon": "^9.0.1",
+    "typescript": "^3.6.4"
+  }
+}
